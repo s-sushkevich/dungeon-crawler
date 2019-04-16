@@ -1,0 +1,38 @@
+import React from 'react';
+
+export default {
+    skills: [
+        <i className="fas fa-shield-alt"></i>,
+        <i className="fas fa-satellite-dish"></i>,
+        <i className="fas fa-satellite"></i>,
+        <i className="fas fa-radiation"></i>,
+        <i className="fas fa-pizza-slice"></i>,
+        <i className="fab fa-nintendo-switch"></i>,
+        <i className="fas fa-monument"></i>,
+        <i className="fas fa-mobile-alt"></i>,
+        <i className="fas fa-meteor"></i>,
+        <i className="fas fa-magnet"></i>,
+        <i className="fas fa-jedi"></i>,
+        <i className="fas fa-hammer"></i>,
+        <i className="fas fa-ethernet"></i>,
+        <i className="fas fa-dumbbell"></i>,
+        <i className="fas fa-dice-d20"></i>,
+        <i className="fas fa-cogs"></i>,
+        <i className="fas fa-chess-rook"></i>,
+        <i className="fas fa-chess-queen"></i>,
+        <i className="fas fa-charging-station"></i>,
+        <i className="fas fa-bug"></i>,
+        <i className="fas fa-atom"></i>,
+        <i className="fas fa-carrot"></i>,
+        <i className="fas fa-dragon"></i>,
+        <i className="fas fa-feather-alt"></i>,
+        <i className="fas fa-fire"></i>,
+    ],
+    certificates: [
+        <i className="fas fa-biohazard"></i>,
+        <i className="fas fa-flask"></i>,
+        <i className="fas fa-laptop"></i>,
+    ],
+    player: <i className="fas fa-robot"></i>,
+    boss: <i className="fas fa-skull"></i>,
+}
