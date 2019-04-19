@@ -11,3 +11,4 @@ npm run server
 ```bash
 npm start
 ```
+Use arrow keys on your keyboard in order to move player. Enjoy!
