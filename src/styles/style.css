@@ -1,6 +1,12 @@
+body {
+    margin: 0;
+}
+
 .app {
     max-width: 1200px;
     margin: auto;
+    min-height: 100vh;
+    background-color: #272727;
 }
 
 .app header {
