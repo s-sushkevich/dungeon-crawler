@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Stats extends React.Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getHighscore();
     }
 

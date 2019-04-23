@@ -7,7 +7,7 @@ import gameLevelsConsts from '../consts/gameLevels';
 
 class Map extends React.Component {
 
-    componentWillMount() {
+    componentDidMount() {
         document.addEventListener("keydown", this.handleArrowKey);
     }
 
