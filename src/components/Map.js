@@ -7,6 +7,13 @@ import gameLevelsConsts from '../consts/gameLevels';
 
 class Map extends React.Component {
 
+    constructor() {
+        super();
+        this.handleArrowKey = this.handleArrowKey.bind(this);
+        this.checkForMoving = this.checkForMoving.bind(this);
+        this.moveItem = this.moveItem.bind(this);
+    }
+
     componentDidMount() {
         document.addEventListener("keydown", this.handleArrowKey);
     }
@@ -19,8 +26,7 @@ class Map extends React.Component {
         setTimeout(this.props.clearNotificationsMessage, 1500);
     }
 
-    handleArrowKey = (event) => {
-
+    handleArrowKey(event) {
         switch (event.keyCode) {
             case 37:
                 event.preventDefault();
@@ -36,7 +42,7 @@ class Map extends React.Component {
                 event.preventDefault();
                 this.checkForMoving(this.props.playerCoordinateY - 1, this.props.playerCoordinateX, this.props.moveUp);
 
-                let newScrolledUpViewport = gameService.shouldMapScrollUp(this.props.map, this.props.viewportRows, this.props.playerCoordinateY, this.props.viewportThreshold); // <- Рефактор
+                let newScrolledUpViewport = gameService.shouldMapScrollUp(this.props.map, this.props.viewportRows, this.props.playerCoordinateY, this.props.viewportThreshold);
                 newScrolledUpViewport && this.props.scrollMap(newScrolledUpViewport);
                 break;
 
@@ -44,13 +50,13 @@ class Map extends React.Component {
                 event.preventDefault();
                 this.checkForMoving(this.props.playerCoordinateY + 1, this.props.playerCoordinateX, this.props.moveDown);
 
-                let newScrolledDownViewport = gameService.shouldMapScrollDown(this.props.map, this.props.viewportRows, this.props.playerCoordinateY, this.props.viewportThreshold); // <- Рефактор
+                let newScrolledDownViewport = gameService.shouldMapScrollDown(this.props.map, this.props.viewportRows, this.props.playerCoordinateY, this.props.viewportThreshold);
                 newScrolledDownViewport && this.props.scrollMap(newScrolledDownViewport);
                 break;
         }
     };
 
-    checkForMoving = (targetY, targetX, moveFunction) => {
+    checkForMoving(targetY, targetX, moveFunction) {
         if (!gameService.isVerticalBorder(this.props.map, targetY)
             && !gameService.isWall(this.props.map, targetY, targetX)) {
 
@@ -78,7 +84,7 @@ class Map extends React.Component {
         }
     };
 
-    moveItem = (targetY, targetX, moveFunction) => {
+    moveItem(targetY, targetX, moveFunction) {
         if (this.props.playerLevel === gameLevelsConsts.LEVEL_FIRST && gameService.isSkill(this.props.map, targetY, targetX)) {
             this.props.getSkill();
             this.clearNotificationsMessage();
