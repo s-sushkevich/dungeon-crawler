@@ -2,7 +2,7 @@ class HighscoreService {
     getValue() {
         return fetch('http://localhost:4000/highscore')
             .then((res) => {
-                return res.json(); //
+                return res.json();
             })
     };
 
